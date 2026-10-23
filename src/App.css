@@ -192,3 +192,50 @@ button:hover{width: 100px ;
   transition-duration: 2s;
   font-size: 20px;
 }
+.student-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%; /* optionnel : image ronde */
+  display: block;
+  margin: 0 auto;
+}
+.site-header {
+  padding: 24px;
+  text-align: center;
+  background-color: #eeeeee;
+}
+
+.site-header h1 {
+  margin: 0;
+  color: #426f86;
+}
+
+.site-header p {
+  margin: 8px 0 0;
+  color: #666;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 12px;
+  background-color: #70b3e8;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.site-footer {
+  padding: 16px;
+  text-align: center;
+  color: white;
+  background-color: #426f86;
+}

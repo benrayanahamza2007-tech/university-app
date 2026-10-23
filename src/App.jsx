@@ -1,140 +1,98 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-<link rel="stylesheet" href="index.css" />
-import './App.css'
+import './App.css';
+import StudentCard from './components/StudentCard.jsx';
 import Image from './assets/123.jpg'
-const tel ="+216 93 865 001"
-const etudiant = {
-  nom:"hamza ben rayana",
+import Image1 from './assets/img1.avif'
+import Image2 from './assets/img3.jpg'
+import Image3 from './assets/img2.avif'
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+const etudiant =[ {
+ nom:"hamza ben rayana",
  email:"benrayanahamza2007@gmail.com",
- image: Image
-}
-function App() {
-
+ tel:"+216 93 865 001",
+ filiere:"Génie Logiciel et Système d'information",
+ anneEtude:"2026/2027",
+ groupe:"GLSI 2 B",
+ ville:"teboulba",
+ image:Image,
+},
+{
+ nom:"Slim Boubaker",
+ email:"slimboubaker@gmail.com",
+ tel:"+216 93 555 555",
+ filiere:"Génie Logiciel et Système d'information",
+ anneEtude:"2026/2027",
+ groupe:"GLSI 2 A",
+ ville:"Mahdia",
+ image:Image1,
+},
+{
+ nom:"Sarra Trabelsi",
+ email:"sarratrabelsi@gmail.com",
+ tel:"+216 95 999 999",
+ filiere:"Génie Logiciel et Système d'information",
+ anneEtude:"2026/2027",
+ groupe:"GLSI 2 B",
+ ville:"Sousse",
+ image:Image2,
+},
+{
+ nom:"Abdessattar khalfallah",
+ email:"abdesssattarkhalfallah@gmail.com",
+ tel:"+216 95 333 565",
+ filiere:"Génie Logiciel et Système d'information",
+ anneEtude:"2026/2027",
+ groupe:"GLSI 2 c",
+ ville:"Béja",
+ image:Image3,
+},
+]
+function App(){
   return (
-    <div>
-      <h1>Fiche etudiant</h1>
-      <img src={Image} alt="image "width={100} />
-      <p><strong>Nom & Prénom :</strong> {etudiant.nom}</p>
-      <p><strong>Email:</strong> {etudiant.email}</p>
-      <p><strong>Téléphone:</strong>{tel}</p>
-      <p><strong>Filière:</strong> Génie Logiciel et Système d'information</p>
-      <p><strong>Année d'étude :</strong>2026/2027</p>
-      <p><strong>Groupe:</strong>GLSI 2 B</p>
-      <p><strong>Ville:</strong> Teboulba</p>
-      <button >contacter</button>
-    </div>
-    /*<>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="page" id="accueil">
+  <Header />
+  <Navbar />
 
-      <div className="ticks"></div>
+  <main className="student-list" id="etudiants">
+    {etudiant.map((etudiant) => (
+        <StudentCard 
+        nom={etudiant.nom}
+        key={etudiant.email}
+        email={etudiant.email}
+        tel={etudiant.tel}
+        filiere={etudiant.filiere}
+        anneEtude={etudiant.anneEtude}
+        groupe={etudiant.groupe}
+        ville={etudiant.ville}
+        image={etudiant.image}
+          />
+    ))}
+  </main>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>*/
-  )
+  <Footer />
+</div>
+    //   <div className='container'>
+    //       <div className='card'>
+    //           {etudiant.map((etudiant) => (
+    //     <StudentCard 
+    //     nom={etudiant.nom}
+    //     key={etudiant.email}
+    //     email={etudiant.email}
+    //     tel={etudiant.tel}
+    //     filiere={etudiant.filiere}
+    //     anneEtude={etudiant.anneEtude}
+    //     groupe={etudiant.groupe}
+    //     ville={etudiant.ville}
+    //     image={etudiant.image}
+    //       />
+    //   ))}
+    // </div>
+  
+            
+        
+      );
 }
-
-export default App
+    
+export default App;

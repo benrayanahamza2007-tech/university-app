@@ -186,12 +186,12 @@
 }
 h1{color: #13e02b;}
 body{background-color: beige;}
-button:hover{width: 100px ;
+/*button:hover{width: 100px ;
   height: 50px;
   background-color: brown;
   transition-duration: 2s;
   font-size: 20px;
-}
+}*/
 .student-image {
   width: 150px;
   height: 150px;
@@ -238,4 +238,22 @@ button:hover{width: 100px ;
   text-align: center;
   color: white;
   background-color: #426f86;
+}
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+}
+.actions input {
+  padding: 8px 12px;
+  width: 300px;
+  border: 1px solid #888;
+  border-radius: 6px;
+}
+.student-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
 }
